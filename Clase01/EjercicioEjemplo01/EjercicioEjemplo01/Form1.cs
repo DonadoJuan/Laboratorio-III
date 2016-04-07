@@ -41,6 +41,11 @@ namespace EjercicioEjemplo01
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Tu nombre es :" + txtNomb);
+        }
+
+        private void botonprueba_Click(object sender, EventArgs e)
+        {
 
         }
     }

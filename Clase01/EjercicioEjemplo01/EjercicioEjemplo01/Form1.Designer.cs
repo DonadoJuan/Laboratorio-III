@@ -32,6 +32,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnMostrar = new System.Windows.Forms.Button();
+            this.botonprueba = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btb1
@@ -63,7 +64,7 @@
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(197, 64);
+            this.btnMostrar.Location = new System.Drawing.Point(197, 57);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(75, 23);
             this.btnMostrar.TabIndex = 3;
@@ -71,11 +72,22 @@
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
+            // botonprueba
+            // 
+            this.botonprueba.Location = new System.Drawing.Point(81, 102);
+            this.botonprueba.Name = "botonprueba";
+            this.botonprueba.Size = new System.Drawing.Size(75, 23);
+            this.botonprueba.TabIndex = 4;
+            this.botonprueba.Text = "Prueba";
+            this.botonprueba.UseVisualStyleBackColor = true;
+            this.botonprueba.Click += new System.EventHandler(this.botonprueba_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.botonprueba);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
@@ -94,6 +106,7 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.Button botonprueba;
     }
 }
 

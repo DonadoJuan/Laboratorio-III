@@ -20,8 +20,7 @@ namespace _01_CicloDeVidaForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Sale con DISPOSE...");
-            this.Dispose();
+            Application.Run(new Form2());
         }
 
         private void Form1_Load(object sender, EventArgs e)
