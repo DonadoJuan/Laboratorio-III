@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacion.01", "Aplicacion.01\Aplicacion.01.csproj", "{09BDB4C4-A354-41CB-A002-0894B1733473}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacion.02", "Aplicacion.02\Aplicacion.02.csproj", "{8A78E7A5-0779-415E-B79A-3056F97F7A7B}"
@@ -16,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacion.Menu", "Aplicacion.Menu\Aplicacion.Menu.csproj", "{D5AB70C5-6573-45F7-863D-526133FCF53C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculadora", "Calculadora\Calculadora.csproj", "{4E9FD7EF-AE2A-439B-90E1-1E0DE41947E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateWindowForm", "DelegateWindowForm\DelegateWindowForm.csproj", "{4E4A4AAE-FFCB-4930-ADCE-A838BDD83BD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +51,10 @@ Global
 		{4E9FD7EF-AE2A-439B-90E1-1E0DE41947E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E9FD7EF-AE2A-439B-90E1-1E0DE41947E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E9FD7EF-AE2A-439B-90E1-1E0DE41947E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E4A4AAE-FFCB-4930-ADCE-A838BDD83BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E4A4AAE-FFCB-4930-ADCE-A838BDD83BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E4A4AAE-FFCB-4930-ADCE-A838BDD83BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E4A4AAE-FFCB-4930-ADCE-A838BDD83BD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
