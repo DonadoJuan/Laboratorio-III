@@ -15,6 +15,7 @@ namespace Aplicacion.Menu
         private List<Usuario> _listaUsuarios;
         private bool _admin;
         private bool _logged;
+        private string RutaDeGuardado;
         public List<Usuario> listaUsuario { get { return this._listaUsuarios; } set { this._listaUsuarios = value; } }
         public Form1()
         {
@@ -75,7 +76,7 @@ namespace Aplicacion.Menu
         {
             try
             {
-                using (XmlTextWriter escritor = new XmlTextWriter(@"D:\Usuarios.xml", Encoding.UTF8))
+                using (XmlTextWriter escritor = new XmlTextWriter(this.RutaDeGuardado, Encoding.UTF8))
                 {
                     XmlSerializer serializador = new XmlSerializer(typeof(List<Usuario>));
                     serializador.Serialize(escritor, this._listaUsuarios);
@@ -111,6 +112,15 @@ namespace Aplicacion.Menu
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.deserializar() == null)
+            {
+                FormGuardar formguardar = new FormGuardar();
+                formguardar.ShowDialog();
+                this.RutaDeGuardado = formguardar.RutaDeGuardado;
+                    MessageBox.Show("Los cambios se guardaron exitosamente");
+                this.Dispose();
+            }
+
             if (this.serializar())
                 MessageBox.Show("Los cambios se guardaron exitosamente");
             this.Dispose();
