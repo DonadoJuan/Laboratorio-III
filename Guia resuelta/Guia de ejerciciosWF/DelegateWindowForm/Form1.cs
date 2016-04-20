@@ -7,35 +7,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace DelegateWindowForm
 {
+    public delegate void delegadoActualizador (string nombre);
+    public delegate void delegadoActualizador2(Alumno alumno, EventArgs e);
     public partial class Form1 : Form
     {
-        public string actualizarNombrePorDelegado { get; set; }
+        private frmTestDelegados auxDelegados;
+        private frmDatos auxDatos;
+        private frmAltaAlumno auxFrmAltaAlumno;
+        private frmDatosAlumno auxFrmDatosAlumno;
+        public delegadoActualizador objDelegado;
+        public delegadoActualizador objDelegado2;
+        public delegadoActualizador2 MostrarAlumnoPorDelegado;
         public Form1()
         {
             InitializeComponent();
+            auxDelegados = new frmTestDelegados();
+            auxDatos = new frmDatos();
+            auxFrmDatosAlumno = new frmDatosAlumno();
+            auxFrmAltaAlumno = new frmAltaAlumno();
+            objDelegado = new delegadoActualizador(auxDatos.ActualizarNombre);
+            objDelegado2 = new delegadoActualizador(auxDatos.ActualizarFoto);
+            MostrarAlumnoPorDelegado = new delegadoActualizador2(auxFrmDatosAlumno.actualizarAlumno);
         }
 
         private void altaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+                
         }
 
         private void testDelegadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTestDelegados auxform = new frmTestDelegados();
             //auxform.Owner = this;
-            auxform.Show(this);
-
+            this.auxDelegados.Show(this);
         }
 
-        private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void alumnoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDatos auxform = new frmDatos();
-            //auxform.Owner = this;
-            auxform.Show(this);
+            this.auxFrmAltaAlumno.Show(this);
+            //this.MostrarAlumnoPorDelegado(new Alumno("Juan", "DDFSDF", 386231, "RUTALOCA"), e);
+        }
+
+        private void mostrarDelegadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.auxDatos.Show(this);
+        }
+
+        private void mostrarAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            auxFrmDatosAlumno.MdiParent = this;
+            auxFrmDatosAlumno.Show();
+            
+            
         }
     }
 }

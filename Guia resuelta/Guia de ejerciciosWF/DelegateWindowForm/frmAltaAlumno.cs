@@ -11,22 +11,20 @@ using Entidades;
 
 namespace DelegateWindowForm
 {
-    
-    public partial class frmTestDelegados : Form
+    public partial class frmAltaAlumno : Form
     {
-        public string NombreActualizado;
+        private Alumno auxAlumno;
         private string rutaDeArchivo;
-        public frmTestDelegados()
+        public frmAltaAlumno()
         {
             InitializeComponent();
             this.ConfigurarOpenSaveFileDialog();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-            ((Form1)this.Owner).objDelegado(this.txtNombre.Text);
-            ((Form1)this.Owner).objDelegado2(this.rutaDeArchivo);
-
+            this.auxAlumno = new Alumno(this.txtNombre.Text, this.txtApellido.Text, Int32.Parse(this.txtDni.Text), this.rutaDeArchivo);
+            ((Form1)this.Owner).MostrarAlumnoPorDelegado(this.auxAlumno, e);
         }
 
         private void ConfigurarOpenSaveFileDialog()
@@ -39,11 +37,10 @@ namespace DelegateWindowForm
             openFileDialog1.Title = "Seleccione una foto...";
         }
 
-        private void btnBuscarFoto_Click(object sender, EventArgs e)
+        private void txtFoto_TextChanged(object sender, EventArgs e)
         {
             if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
                 this.rutaDeArchivo = this.openFileDialog1.FileName;
-            
         }
     }
 }

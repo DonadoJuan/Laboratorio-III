@@ -33,6 +33,8 @@
             this.testDelegadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarDelegadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,29 +55,46 @@
             this.testDelegadosToolStripMenuItem,
             this.alumnoToolStripMenuItem});
             this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
-            this.altaToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.altaToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.altaToolStripMenuItem.Text = "Alta";
             this.altaToolStripMenuItem.Click += new System.EventHandler(this.altaToolStripMenuItem_Click);
             // 
             // testDelegadosToolStripMenuItem
             // 
             this.testDelegadosToolStripMenuItem.Name = "testDelegadosToolStripMenuItem";
-            this.testDelegadosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.testDelegadosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.testDelegadosToolStripMenuItem.Text = "Test Delegados";
             this.testDelegadosToolStripMenuItem.Click += new System.EventHandler(this.testDelegadosToolStripMenuItem_Click);
             // 
             // alumnoToolStripMenuItem
             // 
             this.alumnoToolStripMenuItem.Name = "alumnoToolStripMenuItem";
-            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.alumnoToolStripMenuItem.Text = "Alumno";
+            this.alumnoToolStripMenuItem.Click += new System.EventHandler(this.alumnoToolStripMenuItem_Click);
             // 
             // mostrarToolStripMenuItem
             // 
+            this.mostrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mostrarDelegadosToolStripMenuItem,
+            this.mostrarAlumnoToolStripMenuItem});
             this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
-            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.mostrarToolStripMenuItem.Text = "Mostrar";
-            this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
+            // 
+            // mostrarDelegadosToolStripMenuItem
+            // 
+            this.mostrarDelegadosToolStripMenuItem.Name = "mostrarDelegadosToolStripMenuItem";
+            this.mostrarDelegadosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.mostrarDelegadosToolStripMenuItem.Text = "Mostrar Delegados";
+            this.mostrarDelegadosToolStripMenuItem.Click += new System.EventHandler(this.mostrarDelegadosToolStripMenuItem_Click);
+            // 
+            // mostrarAlumnoToolStripMenuItem
+            // 
+            this.mostrarAlumnoToolStripMenuItem.Name = "mostrarAlumnoToolStripMenuItem";
+            this.mostrarAlumnoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.mostrarAlumnoToolStripMenuItem.Text = "Mostrar Alumno";
+            this.mostrarAlumnoToolStripMenuItem.Click += new System.EventHandler(this.mostrarAlumnoToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -98,9 +117,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testDelegadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alumnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
-
+        private System.Windows.Forms.ToolStripMenuItem alumnoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem mostrarDelegadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mostrarAlumnoToolStripMenuItem;
     }
 }
 

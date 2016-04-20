@@ -50,11 +50,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaAlumno.Designer.cs">
+      <DependentUpon>frmAltaAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDatos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDatos.Designer.cs">
       <DependentUpon>frmDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatosAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatosAlumno.Designer.cs">
+      <DependentUpon>frmDatosAlumno.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTestDelegados.cs">
       <SubType>Form</SubType>
@@ -67,8 +79,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaAlumno.resx">
+      <DependentUpon>frmAltaAlumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDatos.resx">
       <DependentUpon>frmDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatosAlumno.resx">
+      <DependentUpon>frmDatosAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTestDelegados.resx">
       <DependentUpon>frmTestDelegados.cs</DependentUpon>
@@ -108,6 +126,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>pan.tt</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{6ba036ce-a6b8-4dad-bedd-58e96ed39221}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
