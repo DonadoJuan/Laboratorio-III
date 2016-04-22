@@ -11,8 +11,6 @@ using Entidades;
 
 namespace DelegateWindowForm
 {
-    public delegate void delegadoActualizador (string nombre);
-    public delegate void delegadoActualizador2(Alumno alumno, EventArgs e);
     public partial class Form1 : Form
     {
         private frmTestDelegados auxDelegados;

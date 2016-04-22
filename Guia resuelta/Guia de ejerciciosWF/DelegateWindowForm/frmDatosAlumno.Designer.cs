@@ -37,7 +37,6 @@
             this.pictureBox1.Location = new System.Drawing.Point(214, 52);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(149, 128);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -49,6 +48,16 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmDatosAlumno";
             this.Text = "frmDatosAlumno";
+            this.Controls.SetChildIndex(this.btnAceptar, 0);
+            this.Controls.SetChildIndex(this.btnCancelar, 0);
+            this.Controls.SetChildIndex(this.txtDni, 0);
+            this.Controls.SetChildIndex(this.txtApellido, 0);
+            this.Controls.SetChildIndex(this.txtFoto, 0);
+            this.Controls.SetChildIndex(this.txtNombre, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
