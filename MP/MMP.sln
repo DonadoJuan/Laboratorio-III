@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidad", "Entidad\Entidad.csproj", "{1D45DA78-409B-4452-8C26-F549A4D2806A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsForm", "WindowsForm\WindowsForm.csproj", "{B1459816-5E53-4E5D-B5E8-619BE5494A74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D45DA78-409B-4452-8C26-F549A4D2806A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D45DA78-409B-4452-8C26-F549A4D2806A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D45DA78-409B-4452-8C26-F549A4D2806A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D45DA78-409B-4452-8C26-F549A4D2806A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1459816-5E53-4E5D-B5E8-619BE5494A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1459816-5E53-4E5D-B5E8-619BE5494A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1459816-5E53-4E5D-B5E8-619BE5494A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1459816-5E53-4E5D-B5E8-619BE5494A74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
