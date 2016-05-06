@@ -19,18 +19,31 @@ namespace HerenciaDeControles
         {
             switch (TipoDeDato)
             {
-                case ETipoDato.Entero: base.OnKeyPress(e);
+                case ETipoDato.Entero: if(Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+                                            base.OnKeyPress(e);
+                                        else
+                                            e.Handled = true;
                     break;
                 case ETipoDato.Doble:   if (Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == ',')
                                             base.OnKeyPress(e);
+                                        else
+                                            e.Handled = true;
                     break;
                 case ETipoDato.Binario: if (e.KeyChar == '0' || e.KeyChar == '1')
                                             base.OnKeyPress(e);
+                                        else
+                                            e.Handled = true;
                     break;
                 case ETipoDato.Octal:   if(Char.IsDigit(e.KeyChar) && e.KeyChar <= 7) 
-                    break;                   base.OnKeyPress(e);
-                case ETipoDato.Hexadecimal: if(Char.IsDigit(e.KeyChar) || char.IsUpper(e.KeyChar)
-                                                if(
+                                           base.OnKeyPress(e);
+                                        else
+                                            e.Handled = true;
+                    break;
+                case ETipoDato.Hexadecimal: if (Char.IsDigit(e.KeyChar) || char.IsUpper(e.KeyChar))
+                                                base.OnKeyPress(e);
+                                            else
+                                                e.Handled = true;
+                    break;
                                         
                                         
             }
