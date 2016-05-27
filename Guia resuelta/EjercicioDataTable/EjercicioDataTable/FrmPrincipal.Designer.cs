@@ -35,16 +35,15 @@
             this.btnProductos = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Mostrar = new System.Windows.Forms.GroupBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnProveedoresLocTxtFiltro = new System.Windows.Forms.Button();
             this.btnProveedorLocQuilmes = new System.Windows.Forms.Button();
             this.btnProductoProvLoc = new System.Windows.Forms.Button();
             this.btnProveedorLocalidad = new System.Windows.Forms.Button();
             this.btnProductoProveedor = new System.Windows.Forms.Button();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.grvLista = new System.Windows.Forms.DataGridView();
+            this.lstBox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.Mostrar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvLista)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDataST
@@ -55,6 +54,7 @@
             this.btnDataST.TabIndex = 0;
             this.btnDataST.Text = "Crear DataSet y DataTable ";
             this.btnDataST.UseVisualStyleBackColor = true;
+            this.btnDataST.Click += new System.EventHandler(this.btnDataST_Click);
             // 
             // btnRelaciones
             // 
@@ -64,6 +64,7 @@
             this.btnRelaciones.TabIndex = 1;
             this.btnRelaciones.Text = "Crear Relaciones";
             this.btnRelaciones.UseVisualStyleBackColor = true;
+            this.btnRelaciones.Click += new System.EventHandler(this.btnRelaciones_Click);
             // 
             // btnLocalidades
             // 
@@ -71,8 +72,9 @@
             this.btnLocalidades.Name = "btnLocalidades";
             this.btnLocalidades.Size = new System.Drawing.Size(172, 38);
             this.btnLocalidades.TabIndex = 2;
-            this.btnLocalidades.Text = "Crear Localidades";
+            this.btnLocalidades.Text = "Cargar Localidades";
             this.btnLocalidades.UseVisualStyleBackColor = true;
+            this.btnLocalidades.Click += new System.EventHandler(this.btnLocalidades_Click);
             // 
             // btnProveedores
             // 
@@ -82,6 +84,7 @@
             this.btnProveedores.TabIndex = 3;
             this.btnProveedores.Text = "Cargar Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnProductos
             // 
@@ -91,6 +94,7 @@
             this.btnProductos.TabIndex = 4;
             this.btnProductos.Text = "Cargar Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // groupBox1
             // 
@@ -108,7 +112,7 @@
             // 
             // Mostrar
             // 
-            this.Mostrar.Controls.Add(this.grvLista);
+            this.Mostrar.Controls.Add(this.lstBox);
             this.Mostrar.Controls.Add(this.txtFiltro);
             this.Mostrar.Controls.Add(this.btnProveedoresLocTxtFiltro);
             this.Mostrar.Controls.Add(this.btnProveedorLocQuilmes);
@@ -122,6 +126,14 @@
             this.Mostrar.TabStop = false;
             this.Mostrar.Text = "Mostrar";
             // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(260, 238);
+            this.txtFiltro.Multiline = true;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(219, 38);
+            this.txtFiltro.TabIndex = 10;
+            // 
             // btnProveedoresLocTxtFiltro
             // 
             this.btnProveedoresLocTxtFiltro.Location = new System.Drawing.Point(6, 238);
@@ -130,6 +142,7 @@
             this.btnProveedoresLocTxtFiltro.TabIndex = 5;
             this.btnProveedoresLocTxtFiltro.Text = "5 - Mostrar proveedores de la localidad ingresada en el TxtFiltro";
             this.btnProveedoresLocTxtFiltro.UseVisualStyleBackColor = true;
+            this.btnProveedoresLocTxtFiltro.Click += new System.EventHandler(this.btnProveedoresLocTxtFiltro_Click);
             // 
             // btnProveedorLocQuilmes
             // 
@@ -139,6 +152,7 @@
             this.btnProveedorLocQuilmes.TabIndex = 6;
             this.btnProveedorLocQuilmes.Text = "4 - Mostrar proveedores de la Localidad \"Quilmes\"";
             this.btnProveedorLocQuilmes.UseVisualStyleBackColor = true;
+            this.btnProveedorLocQuilmes.Click += new System.EventHandler(this.btnProveedorLocQuilmes_Click);
             // 
             // btnProductoProvLoc
             // 
@@ -148,6 +162,7 @@
             this.btnProductoProvLoc.TabIndex = 7;
             this.btnProductoProvLoc.Text = "3 - Mostrar productos con Proveedor con su Localidad";
             this.btnProductoProvLoc.UseVisualStyleBackColor = true;
+            this.btnProductoProvLoc.Click += new System.EventHandler(this.btnProductoProvLoc_Click);
             // 
             // btnProveedorLocalidad
             // 
@@ -157,6 +172,7 @@
             this.btnProveedorLocalidad.TabIndex = 8;
             this.btnProveedorLocalidad.Text = "2 - Mostrar Proveedor con su Localidad ";
             this.btnProveedorLocalidad.UseVisualStyleBackColor = true;
+            this.btnProveedorLocalidad.Click += new System.EventHandler(this.btnProveedorLocalidad_Click);
             // 
             // btnProductoProveedor
             // 
@@ -166,22 +182,15 @@
             this.btnProductoProveedor.TabIndex = 9;
             this.btnProductoProveedor.Text = "1 - Mostrar Productos con su Proveedor";
             this.btnProductoProveedor.UseVisualStyleBackColor = true;
+            this.btnProductoProveedor.Click += new System.EventHandler(this.btnProductoProveedor_Click);
             // 
-            // txtFiltro
+            // lstBox
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(260, 238);
-            this.txtFiltro.Multiline = true;
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(219, 38);
-            this.txtFiltro.TabIndex = 10;
-            // 
-            // grvLista
-            // 
-            this.grvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvLista.Location = new System.Drawing.Point(6, 103);
-            this.grvLista.Name = "grvLista";
-            this.grvLista.Size = new System.Drawing.Size(473, 129);
-            this.grvLista.TabIndex = 11;
+            this.lstBox.FormattingEnabled = true;
+            this.lstBox.Location = new System.Drawing.Point(6, 103);
+            this.lstBox.Name = "lstBox";
+            this.lstBox.Size = new System.Drawing.Size(473, 121);
+            this.lstBox.TabIndex = 11;
             // 
             // FrmPrincipal
             // 
@@ -195,7 +204,6 @@
             this.groupBox1.ResumeLayout(false);
             this.Mostrar.ResumeLayout(false);
             this.Mostrar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvLista)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,13 +217,13 @@
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox Mostrar;
-        private System.Windows.Forms.DataGridView grvLista;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnProveedoresLocTxtFiltro;
         private System.Windows.Forms.Button btnProveedorLocQuilmes;
         private System.Windows.Forms.Button btnProductoProvLoc;
         private System.Windows.Forms.Button btnProveedorLocalidad;
         private System.Windows.Forms.Button btnProductoProveedor;
+        private System.Windows.Forms.ListBox lstBox;
     }
 }
 
