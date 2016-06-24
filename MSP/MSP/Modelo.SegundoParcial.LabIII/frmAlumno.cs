@@ -19,9 +19,16 @@ namespace Modelo.SegundoParcial.LabIII
         {
             InitializeComponent();
             this._MiAlumno = null;
-            this.cboxCurso.Items.Add(100);
-            this.cboxCurso.Items.Add(200);
-            this.cboxCurso.Items.Add(300);
+            this.cboxCurso.Items.Add(1000);
+            this.cboxCurso.Items.Add(1005);
+            this.cboxCurso.Items.Add(1010);
+        }
+
+        public frmAlumno(string legajo, string apellido, string codCurso) : this()
+        {
+            this.txtLegajo.Text = legajo;
+            this.txtApellido.Text = apellido;
+            this.cboxCurso.Text = codCurso;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -33,6 +40,12 @@ namespace Modelo.SegundoParcial.LabIII
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void frmAlumno_Load(object sender, EventArgs e)
+        {
+            if (this.Text == "Modificacion")
+                this.txtLegajo.ReadOnly = true;
         }
     }
 }

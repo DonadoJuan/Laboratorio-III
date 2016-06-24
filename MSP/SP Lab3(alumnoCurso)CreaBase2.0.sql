@@ -3,9 +3,9 @@ GO
 
 /****** Object:  Database [AlumnosCursos-2010]    Script Date: 11/12/2010 09:52:45 ******/
 CREATE DATABASE [AlumnosCursos-2010] ON  PRIMARY 
-( NAME = N'AlumnosCursos-2010', FILENAME = N'D:\Descargas\AlumnosCursos-2010.mdf' , SIZE = 3072KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+( NAME = N'AlumnosCursos-2010', FILENAME = N'D:\AlumnosCursos-2010.mdf' , SIZE =  33000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
  LOG ON 
-( NAME = N'AlumnosCursos-2010_log', FILENAME = N'D:\Descargas\AlumnosCursos-2010_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+( NAME = N'AlumnosCursos-2010_log', FILENAME = N'D:\AlumnosCursos-2010_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
 GO
 
 ALTER DATABASE [AlumnosCursos-2010] SET COMPATIBILITY_LEVEL = 100
@@ -14,7 +14,7 @@ GO
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
 begin
 EXEC [AlumnosCursos-2010].[dbo].[sp_fulltext_database] @action = 'enable'
-end
+end 
 GO
 
 ALTER DATABASE [AlumnosCursos-2010] SET ANSI_NULL_DEFAULT OFF 

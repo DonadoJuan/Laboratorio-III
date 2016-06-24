@@ -15,7 +15,7 @@ namespace Entidades
 
         public string apellido { get { return this._apellido; } }
         public int codCurso { get { return this._codCurso; } }
-        public int legajo { get { return this.legajo; } }
+        public int legajo { get { return this._legajo; } }
 
         public Alumno(string apellido, int codCurso, int legajo)
         {

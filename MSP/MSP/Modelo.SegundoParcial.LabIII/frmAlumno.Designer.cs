@@ -135,6 +135,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Name = "frmAlumno";
             this.Text = "Alta Alumno";
+            this.Load += new System.EventHandler(this.frmAlumno_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
