@@ -75,7 +75,7 @@ namespace Modelo.SegundoParcial.LabIII
             fila2[1] = 3;
             fila2[2] = "Geografia";
             fila3[1] = 5;
-            fila3[2] = "La clase de bigote";
+            fila3[2] = "Biologia";
             dtCursos.Rows.Add(fila1);
             dtCursos.Rows.Add(fila2);
             dtCursos.Rows.Add(fila3);
@@ -92,7 +92,7 @@ namespace Modelo.SegundoParcial.LabIII
             this._dataAdapterAlumnos = new SqlDataAdapter();
             SqlCommand _cmmSelect = new SqlCommand("SELECT * FROM dbo.Alumnos", this._cnn);
             SqlCommand _cmmInsert = new SqlCommand("INSERT INTO dbo.Alumnos VALUES(@legajo, @apellido, @curso)", this._cnn);
-            SqlCommand _cmmUpdate = new SqlCommand("UPDATE dbo.Alumnos SET Legajo_Alumno = @legajo, Apellido_Alumno = @apellido, Curso_Alumno = @curso", this._cnn);
+            SqlCommand _cmmUpdate = new SqlCommand("UPDATE dbo.Alumnos SET Legajo_Alumno = @legajo, Apellido_Alumno = @apellido, Curso_Alumno = @curso  WHERE Legajo_Alumno = @legajo", this._cnn);
             SqlCommand _cmmDelete = new SqlCommand("DELETE dbo.Alumnos WHERE Legajo_Alumno = @legajo", this._cnn);
  
             this._dataAdapterAlumnos.SelectCommand = _cmmSelect;
@@ -163,16 +163,12 @@ namespace Modelo.SegundoParcial.LabIII
 
         private void bajaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            inputBox inputboxLegajo = new inputBox();
-            inputboxLegajo.ShowDialog();
+            string legajoBaja = Microsoft.VisualBasic.Interaction.InputBox("Ingrese legajo", "Atencion");
 
-            if(inputboxLegajo.DialogResult == DialogResult.OK)
-            {
-                string legajo = inputboxLegajo.txtLegajo.Text;
                 bool flag = false;
                 foreach (DataRow item in this._DataSetAlumnos_Cursos.Tables["dtAlumno"].Rows)
                 {
-                    if (item[0].ToString() == legajo)
+                    if (item[0].ToString() == legajoBaja)
                     {
                         frmAlumno frmBaja = new frmAlumno(item[0].ToString(), (string)item[1], item[2].ToString());
                         frmBaja.ShowDialog();
@@ -188,43 +184,40 @@ namespace Modelo.SegundoParcial.LabIII
                 }
 
                 if (!flag)
-                    MessageBox.Show("Pibe cantina no se encuentra, tu hermana es puta");
-            }
+                    MessageBox.Show("No se encontro el legajo!!!");
+            
         }
 
         private void modificaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            inputBox inputboxLegajo = new inputBox();
-            inputboxLegajo.ShowDialog();
-
-            if (inputboxLegajo.DialogResult == DialogResult.OK)
-            {
-                string legajo = inputboxLegajo.txtLegajo.Text;
                 bool flag = false;
+                string legajoMod = Microsoft.VisualBasic.Interaction.InputBox("Ingrese legajo","Atencion");
+                
                 foreach (DataRow item in this._DataSetAlumnos_Cursos.Tables["dtAlumno"].Rows)
                 {
-                    if (item[0].ToString() == legajo)
+                    
+                    if (item[0].ToString() == legajoMod)
                     {
+                        flag = true;
                         frmAlumno frmMod = new frmAlumno(item[0].ToString(), (string)item[1], item[2].ToString());
                         frmMod.Text = "Modificacion";
                         frmMod.ShowDialog();
+
                         if (frmMod.DialogResult == DialogResult.OK)
                         {
                             Alumno AlumnoMod = frmMod.MiAlumno;
                             item[1] = AlumnoMod.apellido;
                             item[2] = AlumnoMod.codCurso;
 
-                            flag = true;
                             break;
 
                         }
-
                     }
                 }
 
                 if (!flag)
-                    MessageBox.Show("Pibe cantina no se encuentra, tu hermana es puta");
-            }
+                    MessageBox.Show("No se encontro el legajo!");
+            
         }
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -275,7 +268,11 @@ namespace Modelo.SegundoParcial.LabIII
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this._dataAdapterAlumnos.Update(this._DataSetAlumnos_Cursos.Tables["dtAlumno"]);
+            int resp = this._dataAdapterAlumnos.Update(this._DataSetAlumnos_Cursos.Tables["dtAlumno"]);
+            if (resp == 1)
+                MessageBox.Show("Se efectuaron cambios en BDSQL");
+            else
+                MessageBox.Show("No se efectuaron cambios!");
         }
     }
 }

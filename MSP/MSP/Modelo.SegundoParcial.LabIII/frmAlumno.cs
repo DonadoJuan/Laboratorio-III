@@ -19,21 +19,49 @@ namespace Modelo.SegundoParcial.LabIII
         {
             InitializeComponent();
             this._MiAlumno = null;
-            this.cboxCurso.Items.Add(1000);
-            this.cboxCurso.Items.Add(1005);
-            this.cboxCurso.Items.Add(1010);
+            this.cboxCurso.Items.Add("Matematica");
+            this.cboxCurso.Items.Add("Geografia");
+            this.cboxCurso.Items.Add("Biologia");
         }
 
         public frmAlumno(string legajo, string apellido, string codCurso) : this()
         {
             this.txtLegajo.Text = legajo;
             this.txtApellido.Text = apellido;
-            this.cboxCurso.Text = codCurso;
+            //this.cboxCurso.Text = codCurso;
+
+            switch (codCurso)
+            {
+                case "1000":
+                    this.cboxCurso.SelectedItem = "Matematica";
+                    break;
+                case "1005":
+                    this.cboxCurso.SelectedItem = "Geografia";
+                    break;
+                case "1010":
+                    this.cboxCurso.SelectedItem = "Biologia";
+                    break;
+                default:
+                    MessageBox.Show("Error en CONSTRUCTOR");
+                    break;
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            this._MiAlumno = new Alumno(this.txtApellido.Text, (int)this.cboxCurso.SelectedItem, Int32.Parse(this.txtLegajo.Text));
+            int codCurso = 0000;
+            switch ((String) this.cboxCurso.SelectedItem)
+            {
+                case "Matematica":  codCurso = 1000;
+                break;
+                case "Geografia":  codCurso = 1005;
+                break;
+                case "Biologia":  codCurso = 1010;
+                break;
+                default: MessageBox.Show("Error en BTNACEPTAR");
+                break;           
+            }
+            this._MiAlumno = new Alumno(this.txtApellido.Text, codCurso , Int32.Parse(this.txtLegajo.Text));
             this.DialogResult = DialogResult.OK;
         }
 
